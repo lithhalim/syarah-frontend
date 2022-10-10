@@ -1,0 +1,45 @@
+@use "../../../main-style/style.scss";
+.header-container {
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid style.$other; border-bottom: 1px solid style.$other;
+    padding: 0px 20px; position: sticky; left: 0; top: 0; width: 100vw; background-color: white; z-index: 100000000;
+    .button-sontainer  {
+        display: flex; align-items: center;
+    }
+
+    .Nav-bar-container {
+        display: flex; align-items: center; background-color: white ; z-index: 10000;
+        li{
+            color: style.$font; padding: 20px; 
+            cursor: pointer;
+        }
+        .active {
+            font-weight: bold; color: style.$font;
+            border-bottom: 2px  solid style.$button;
+        }
+
+
+    }
+    .create-post {
+        color: style.$button; padding: 10px 20px; border: 2px solid style.$button;
+        border-radius: 5px; background-color: rgba(192, 192, 192, 0); font-weight: style.$weight;
+        cursor: pointer;
+    }
+    .Nav-bar {
+        color: style.$font; font-size: 2em; display: flex; align-items: center; margin-left: 20px;
+        cursor: pointer;font-weight: style.$weight;
+    }
+}
+@media screen and (max-width:900px) {
+    .Nav-bar-container {
+        position: absolute;left: 0; top: 50px;  width: 100vw;
+        display: flex; justify-content: space-around;
+        border-bottom: 1px solid style.$other; border-radius: 20px ;
+        li {
+            padding: 15px;
+        }
+    }
+    .Nav-bar-container.hidden {
+        display: none;
+    }
+}

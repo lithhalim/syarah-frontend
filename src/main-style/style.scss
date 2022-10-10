@@ -1,0 +1,28 @@
+$background:rgb(231, 231, 231);
+$font : #154f9c;
+$button : #ec6234;
+$other :silver;
+$weight:600;
+$font2:rgb(43, 43, 43);
+$green:rgb(50, 104, 50);
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px; border-radius: 15px; cursor: pointer;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  

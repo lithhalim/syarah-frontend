@@ -1,0 +1,22 @@
+@use '../../../../main-style/style.scss';
+
+.Header-Naame-section {
+    color: style.$font; padding: 15px; position: relative;
+    width: fit-content; text-align: center; margin-left: auto; margin-right: auto;
+    &::after{
+        content: "";
+        position: absolute;left: 50%; bottom: -5px; transform: translateX(-50%);
+        height: 4px; width: 150px;background-color: style.$button;
+    }
+}
+
+.Warrenty-section {
+    padding: 50px 50px;
+
+    .warenty-container {
+        display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+        img {
+            max-width: 100%;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+@use "../../../../main-style/style.scss";
+.certified-user {
+    padding: 50px;
+    .certified-container {
+        display: grid; grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+        gap: 20px; margin-top: 50px; margin-bottom: 50px;
+        .icon-section {
+            overflow: hidden; background-color: style.$background;
+            &:hover img {
+                transform: scale(1.1); transition: all .5s; cursor: pointer;
+            }
+            .image-container {
+                height: 250px; overflow: hidden;
+            }
+            border-radius: 5px;
+            img{
+                width: 100%; height: 250px; transition: all .5s;
+            }
+    
+        }
+        .text-area {
+            display: flex; align-items: center; justify-content: space-between;
+            .title {
+                padding: 10px;
+            }
+            .month-price {
+                font-weight: bold; color: style.$font; padding: 10px;
+            }
+            .price {
+                padding: 10px 5px; font-weight: bold; color: style.$font; text-align: center;
+                font-size: 1.7em;
+            }
+            .discount {
+                padding: 10px 5px; text-align: center; text-decoration: line-through; 
+            }
+    
+        }
+    }
+
+    .see-allUsed-car {
+        padding: 10px 40px; background-color: style.$button; 
+        display: block; margin-left: auto; margin-right: auto; border: 1px solid rgba(192, 192, 192, 0);
+        font-weight: 100; color: white;  cursor: pointer ; margin-bottom: 50px; border-radius: 5px;
+    }
+
+    
+}

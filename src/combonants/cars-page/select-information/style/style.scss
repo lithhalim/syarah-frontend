@@ -1,0 +1,87 @@
+@use "../../../../main-style/style.scss";
+
+.selector-header-section{
+  display: flex; padding: 15px; align-items: center;
+  color: style.$font2; justify-content: space-between;
+  width: 100%; border-bottom: 1px solid silver; border-right:1px solid silver ;
+  
+  h1 {
+    font-size: 1.1em;
+  }
+  button {
+    border:none;  cursor: pointer; background-color: white;
+    font-weight: bold;
+  }
+}
+.show-result-search {
+  width: 100%; background-color: style.$font; color: white;
+  padding: 15px;  border: 1px  solid style.$font; display: flex; justify-content: space-between;
+  cursor: pointer;
+
+}
+
+
+.selector-container-section {
+  height: 100%; overflow-y: scroll;width: 100%;
+}
+
+
+.multiselect {
+    width: 260px; overflow-y: scroll;
+    .selectBox {
+      position: relative; cursor: pointer;
+          select {
+            border: none;
+            width: 100%; padding: 15px; font-size: 1.1em; border-bottom: 1px solid style.$background;
+            font-weight: bold; color: style.$font2;
+          }
+    }
+    .overSelect {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+  
+  
+  }
+  
+  
+  
+  
+  #checkboxes {
+    display: none;
+    border: 1px #dadada solid;
+    max-height: 250px; 
+    .container-brand-logo {
+      display: flex;  margin-left: 5px; align-items: center; text-transform: capitalize;
+      img {width: 40px; height: 40px; padding: 5px; border: 1ox solid style.$background; display: block;}
+    }
+
+    input{
+      border-radius: 50%; width: 20px; height: 20px; margin-right: 5px;
+    }
+
+
+
+  }
+  
+  
+
+  #checkboxes label {
+    display: flex; padding: 5px; align-items: center; padding: 5px;
+    &:hover {
+      background-color: #1e8fff71; transition: all .5s; cursor: pointer;
+    }
+    
+  }
+
+
+
+  @media screen and (max-width:1100px) {
+    .multiselect {
+      background-color: white; width: 100%;
+
+    }
+  }

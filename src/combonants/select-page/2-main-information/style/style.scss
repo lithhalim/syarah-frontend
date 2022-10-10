@@ -1,0 +1,86 @@
+@use "../../../../main-style/style.scss";
+
+.container-select-main-information  {
+    position: fixed; right: 50px; top: 110px;
+    .number-views {
+        display: flex; background-color: rgba(60, 60, 182, 0.116); padding: 0px 5px;
+        color: style.$font; border-radius: 5px; font-size: .8em; align-items: center;
+        li {
+            padding: 15px 5px;
+        }
+        .number {font-weight: bold;}
+    }
+
+
+
+    //---------------------------------------------Title section ----------------------------------------//
+    .title-section{
+        margin-top: 10px;
+        li {
+            padding: 10px 0px;
+        }
+        .name {
+            margin-top: 15px; font-size: 1.4em; font-weight: bold;
+        }
+        .milage {
+            padding: 5px; border-left: 2px solid black;
+        }
+        .icon {
+            display: flex; align-items: center; font-size: .9em;
+            span {
+                background-color: rgba(127, 255, 212, 0.089); margin-right: 5px; padding: 8px 5px;
+                display: block;
+            }
+        }
+    }
+
+
+    //----------------------------------------price section -------------------------------------------//
+    .price-section{
+        margin-top: 30px;
+        p {
+            font-weight: bold; padding: 5px 0px; font-size: 1.3em;
+        }
+        h1 {
+            font-weight: style.$weight; color: style.$green;
+            span {font-weight: normal}; font-size: 1.5em; padding: 5px 0px;
+        }
+        span {
+            padding: 5px 0px; font-size: .8em; 
+        }
+    }
+
+    //-----------------------------------Button section ---------------------------------------------//
+    .Butten-select{
+        margin-top: 30px;
+        li:first-child{
+            width: 100%; padding: 10px;  background-color: style.$green;
+            color: white; text-align: center; margin-top: 15px; border-radius: 5px;
+        }
+        li:last-child{
+            border: 1px solid style.$green; text-align: center; padding: 10px;
+            margin-top: 15px;border-radius: 5px;
+
+        }
+    }
+}
+
+
+
+@media screen and (max-width:900px) {
+    .container-select-main-information{
+        position: relative; margin-left: 50px;
+        width: 100%;
+        .Butten-select{
+            display: flex; flex-wrap: wrap; justify-content: space-between;
+            li:first-child{
+                width: 48%;
+            }
+            li:last-child{
+                width: 48%;
+
+            }
+        }
+    }
+    
+}

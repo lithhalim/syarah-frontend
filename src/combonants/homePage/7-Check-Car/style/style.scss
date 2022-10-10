@@ -1,0 +1,46 @@
+@use "../../../../main-style/style.scss";
+.container-checkcar {
+    padding: 30px 50px;
+    .check-car-section {
+        display: flex; align-items: center; justify-content: space-around;
+        flex-wrap: wrap; color: style.$font; margin: 50px;
+
+        h1 {
+            font-size: 1.5em; padding: 10px 0px;
+        }
+        img {
+            max-height: 300px; width: 400px; border-radius: 10px;
+        }
+        .text-area {
+            width: 400px;
+        }
+    }
+}
+
+
+
+
+.check-car2-conrtainer {
+    margin: 50px; display: flex; align-items: center; justify-content: space-between;
+    background-color: rgba(255, 166, 0, 0.781); flex-wrap: wrap; color: style.$font;
+    border-radius: 10px;
+    img {
+       min-width: 300px; flex-basis: 40%;
+    }
+    .text-area {
+        flex-basis: 50%; min-width: 400px;
+        h1 {
+            padding: 10px 30px;
+        } 
+        p{
+            padding: 10px 30px;
+        }
+        button {
+            padding: 15px 35px; font-weight: bold; border-radius: 5px;
+            margin: 20px 30px; display: block; background-color: style.$button;
+            color: white; border: 1px solid rgba(192, 192, 192, 0); cursor: pointer;
+
+        }
+    }
+    
+}

@@ -1,0 +1,52 @@
+@use "../../../../main-style/style.scss";
+.footer-container {
+    margin: 50px 0px; border-top: 1px solid style.$background;margin-bottom: 100px; padding-top: 10px;
+    img {
+        display: block; padding: 0px 15px; 
+    }
+    .text-section {
+        display: flex; align-items: center; flex-wrap: wrap; justify-content: space-between;
+
+        .left-side {
+            ul {
+                display: flex; justify-content: space-between; padding: 15px;
+                li{
+                    cursor: pointer;
+                }
+            }
+            p{
+                padding: 15px; font-size: .8em;
+            }
+        }
+
+        .right-side {
+            padding: 15px; 
+            p{
+                color: rgb(84, 161, 136); font-size: .9em; padding: 5px; margin-left: 5px;
+            }
+            ul {
+                display: flex; margin-top: 5px; height: 30px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:900px) {
+    .footer-container {
+        margin-bottom: 30px;
+        .text-section{
+            .left-side {
+                ul {
+                    display: none;
+                }
+            }
+    
+
+        }
+    }
+}
+
+
+.footer-container.other {
+    margin: 0px; margin-top: 40px;
+}

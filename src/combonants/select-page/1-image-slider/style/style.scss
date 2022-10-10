@@ -1,0 +1,45 @@
+@use "../../../../main-style/style.scss";
+
+.container-data-selectPage {
+margin: 50px;
+}
+
+.swiper-container2-all {
+    width: 65vw; border-radius: 10px;
+    .Slider-items {
+        img {
+            width: 100%; border-radius: 20px;
+
+        }
+    }
+}
+
+
+
+@media screen and (max-width:1350px) {
+    .swiper-container2-all{
+        width: 62vw;
+    }
+}
+@media screen and (max-width:1200px) {
+    .swiper-container2-all{
+        width: 55vw;
+    }
+}
+@media screen and (max-width:1000px ) {
+    .swiper-container2-all{
+        width: 50vw;
+    }
+}
+@media screen and (max-width:900px ) {
+    .swiper-container2-all{
+        width: 87vw;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .swiper-container2-all{
+        width: 77vw;
+    }
+
+}

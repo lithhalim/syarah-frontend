@@ -1,0 +1,19 @@
+@use '../../../../main-style/style.scss';
+.container-button-information {
+    position: fixed; left: 0; bottom: 0; align-items: center;
+    display: flex; width: 100vw; height: 70px; justify-content: space-around;
+    background-color:rgb(157, 180, 154); padding: 5px 50px; z-index: 100000;
+    img {
+        height: 60px;
+        width: 15vw;
+    }
+    p {
+        font-size: .9em;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .container-button-information{
+        display: none;
+    }
+}

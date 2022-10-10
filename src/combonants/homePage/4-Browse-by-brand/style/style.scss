@@ -1,0 +1,48 @@
+@use '../../../../main-style/style.scss';
+.brwoser-brand-section {
+    padding: 80px 150px;
+
+    .Brand-container {
+        display: grid; grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+        gap: 25px; text-align: center; margin-top: 50px; margin-bottom: 50px;
+        height: 36vh; overflow-y: hidden;
+        &.active {
+            height: 100%;
+        }
+
+        .brand-icon  {
+            padding: 15px; border: 1px  solid style.$other; cursor: pointer;
+            height: 100px;  position: relative; border-radius: 5px;
+            p {
+                position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+            }
+            &:hover img {
+                transform: scale(1.2);
+            }
+            img {
+                width: 70px; transition: all .5s;
+            }
+        }
+        
+
+    }
+
+    .Show-allbrands {
+        padding: 10px 45px; color: style.$font; border: 2px solid style.$font;
+        border-radius: 5px; font-weight: bold; margin-left: auto; margin-right: auto;
+        display: block; cursor: pointer; margin-bottom: 50px;
+    }
+}
+
+
+@media screen and (max-width:1355px) {
+    .brwoser-brand-section{
+        .Brand-container{
+            height: 47vh; overflow-y: hidden;
+            &.active {
+                height: 100%;
+            }
+    
+        }
+    }
+}
