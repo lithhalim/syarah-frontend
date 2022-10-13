@@ -20,7 +20,8 @@ import {RiPinDistanceLine} from "react-icons/ri"
 
 import "./style/style.scss"
 
-function Car_details() {
+function Car_details({carDetais}:any) {
+  const {CarBrands,Color,Condition,EngineSize,Fuel,Gear,Option,Origin,ShapeCars,kilometer}=carDetais
   return (
     <div className='car-details-container'>
         <div className='header'>
@@ -33,17 +34,17 @@ function Car_details() {
         </div>
 
         <ul className='container-item'>
-            <li><span><BsKey/></span> <span>Brand:</span> <span>Chevrolate</span> </li>
-            <li><span><AiOutlineCar/></span> <span>Modal:</span> <span>Spark</span> </li>
-            <li><span><BiTrim/></span> <span>Trim:</span> <span>Ls</span> </li>
-            <li><span><BsCalendarDate/></span> <span>Year:</span> <span>2019</span> </li>
-            <li><span><AiOutlineBgColors/></span> <span>Color:</span> <span>Red</span> </li>
-            <li><span><GrInstallOption/></span> <span>Option:</span> <span>Stander</span> </li>
-            <li><span><GiFuelTank/></span> <span>Fuel:</span> <span>Gas</span> </li>
-            <li><span><TbManualGearbox/></span> <span>Drivetrain:</span> <span>FWD</span> </li>
+            <li><span><BsKey/></span> <span>Brand:</span> <span>{CarBrands}</span> </li>
+            <li><span><AiOutlineCar/></span> <span>Origin :</span> <span>{Origin}</span> </li>
+            <li><span><BiTrim/></span> <span>Gear:</span> <span>{Gear}</span> </li>
+            <li><span><BsCalendarDate/></span> <span>Condition:</span> <span>{Condition}</span> </li>
+            <li><span><AiOutlineBgColors/></span> <span>Color:</span> <span>{Color}</span> </li>
+            <li><span><GrInstallOption/></span> <span>Option:</span> <span>{Option}</span> </li>
+            <li><span><GiFuelTank/></span> <span>Fuel:</span> <span>{Fuel}</span> </li>
+            <li><span><TbManualGearbox/></span> <span>Drivetrain:</span> <span>{ShapeCars}</span> </li>
             <li><span><TbBrandGoogleDrive/></span> <span>Cylinders:</span> <span>4</span> </li>
-            <li><span><MdOutlineBluetoothDrive/></span> <span>Engine Size:</span> <span>1.4</span> </li>
-            <li><span><RiPinDistanceLine/></span> <span>Kilometer:</span> <span>1505184 km</span> </li>
+            <li><span><MdOutlineBluetoothDrive/></span> <span>Engine Size:</span> <span>{EngineSize}</span> </li>
+            <li><span><RiPinDistanceLine/></span> <span>Kilometer:</span> <span>{kilometer}</span> </li>
         </ul>
       
     </div>

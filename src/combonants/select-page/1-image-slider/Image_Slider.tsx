@@ -13,14 +13,15 @@ import 'swiper/css/scrollbar';
 
 
 
-let DataUse=[
-"https://www.mazda.ph/wp-content/uploads/2022/01/mazda-cx9-banner-update-1.jpg",
-"https://cdn.jdpower.com/JDPA_Mazda%20Vision%20Coupe%20Front.jpg",
-"https://www.mazda.ph/wp-content/uploads/2022/01/mazda-cx9-banner-update-1.jpg",
-"https://cdn.jdpower.com/JDPA_Mazda%20Vision%20Coupe%20Front.jpg",
-]
+interface ImageSection{
+    createdAt:string,
+    id:number,
+    imageUrl:string,
+    image_for_postid:string,
+    updatedAt:string
+}
 
-function Image_Slider() {
+function Image_Slider({images}:any) {
   return (
     <div className='swiper-container2-all'>
         <Swiper
@@ -31,10 +32,10 @@ function Image_Slider() {
             pagination={{ clickable: true }}//you can click right and left
             scrollbar={{ draggable: true }}//you can dragg element
             >
-                {DataUse.map((data)=>(
-                    <SwiperSlide> 
+                {images.map(({imageUrl}:ImageSection,i:any)=>(
+                    <SwiperSlide key={i}> 
                         <div className='Slider-items'>
-                            <img src={data} alt="" />
+                            <img src={imageUrl} alt="" />
                         </div>      
                     </SwiperSlide>                  
                 ))}

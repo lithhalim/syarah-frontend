@@ -28,10 +28,10 @@ function Select_Information({optionItem,type}:any) {
                 </div>
                 <div id="checkboxes" ref={CheckBox}>
                     {option.map((a:any,i:any)=>(
-                        <>
+                        <div key={i}>
                             {type==="logo-car"?<label key={i} className='container-lable'><input type="checkbox" id="one" name={`${name}###${a.name}`}/><div className='container-brand-logo'><img src={a.image} alt=""  /> <p>{a.name}</p></div></label>:<></>}
                             {type==="other"?<label key={i}><input type="checkbox" id="one" name={`${name}###${a}`}   />{a}</label>:<></>}          
-                        </>
+                        </div>
                     ))}
                 </div>
         </div>
