@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Select_Information from '../select-information/Select_Information_element';
 import "./style/style.scss";
 import DataUseHere from "../../cars-page/select-information"
 
+let selectedData:any={}
 function Select_Section({getDataSelect}:any) {
 
 
-
-    let selectedData:any={}
     const DataChange=(event:any)=>{
         let Catagory=event.target.name.split("###")[0]
         let selectItem=event.target.name.split("###")[1]
+
         if(selectedData[Catagory]==undefined){
             selectedData[Catagory]=[selectItem]
         }else{
@@ -25,9 +25,13 @@ function Select_Section({getDataSelect}:any) {
             }
         }
 
+        //save the data in local storage becuse in rerender will remove all data
+        window.localStorage.savaselectdata=JSON.stringify(selectedData)
+
         getDataSelect(selectedData)
 
     }
+
 
 
   return (

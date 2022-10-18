@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import Footer_section from '../../homePage/11-Footer-section/Footer_section';
 import Card_section from '../../homePage/Card_section';
 import Select_Section from '../2-select-section/Select_Section';
@@ -10,24 +10,39 @@ import { useNavigate } from 'react-router';
 import { Trade_Information_Context } from '../../../context-api/Select-Trade';
 
 
-
 function Main_CarPage() {
-    const showItem=useRef<any>()
+    const showItem=useRef()
     const AllpostContext=useContext(AllPost_Context)
     const SelectPagecontext=useContext(Trade_Information_Context)
     const Navi=useNavigate()
     let [Datause,setDatause]=useState(AllpostContext.Allpostes)
 
-    console.log(Datause)
-    //Data Get From Select Item Section 
-    const GetDataSselect=(data:any)=>{
-        if(AllpostContext.Allpostes!==false&&AllpostContext.Allpostes.length>0){
+
+
+    //--------------------------------------select page information -----------------------------------//
+    const GetDataSselect=()=>{
+        let datause=window.localStorage.savaselectdata?JSON.parse(window.localStorage.savaselectdata):false
+        if(datause!==false){
+            let newdata=AllpostContext.Allpostes.filter((datanew,i)=>(
+                datause[Object.keys(datause)[0]].includes(datanew[Object.keys(datause)[0]])
+                ))
+            setDatause(newdata)    
         }
-
-
-        console.log(data)
-    
     }
+    
+
+    //-------------------------------------select catagory --------------------------------------------//
+    useEffect(()=>{
+        if(AllpostContext.specificSelect!==false){
+            let  keyBrand=Object.keys(AllpostContext.specificSelect)
+            let newData=AllpostContext.Allpostes.filter((datanew,i)=>(
+                AllpostContext.specificSelect[Object.keys(AllpostContext.specificSelect)[0]].includes(datanew[Object.keys(AllpostContext.specificSelect)[0]])
+            ))
+            setDatause(newData)            
+        }
+    },[])
+
+
 
 
 
@@ -36,7 +51,9 @@ function Main_CarPage() {
         showItem.current.classList.toggle("active");
     }
 
-    const gotopage=(event:any)=>{
+
+    //----------------------------------go to select page ===========================================//
+    const gotopage=(event)=>{
         let postId=event.currentTarget.getAttribute("datatype")
         SelectPagecontext.setselectPage(postId)
         window.localStorage.savePage=postId
@@ -64,7 +81,7 @@ function Main_CarPage() {
 
             </ul>
             <div className='certified-container-section'>
-                {Datause!==false?Datause.map((data:any,i:any)=>(
+                {Datause!==false?Datause.map((data,i)=>(
                     <div onClick={gotopage} datatype={data.postId} key={i}   >
                         <Card_section datause={data} />
                     </div>

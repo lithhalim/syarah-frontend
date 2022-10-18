@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router';
 import Datause from "../../../All-brand-logo/Brands_Logo_All";
+import { AllPost_Context } from '../../../context-api/all-Post-data';
 import "./style/style.scss";
 
 
 function Browse_by_brand() {
     const [showAllbrand,setshowAllbrand]=useState(false);
     const Navi=useNavigate()
+    const AllPost_Contextitem=useContext(AllPost_Context)
 
 
     const ShowOrHide=()=>{
@@ -17,6 +19,7 @@ function Browse_by_brand() {
 
     const gotoPageSelectSpecificBrand=(event:any)=>{
         let CarBrand=(event.currentTarget.getAttribute("datatype"))
+        AllPost_Contextitem.setspecificSelect({CarBrands:CarBrand})
         Navi("/cars")
 
     }
